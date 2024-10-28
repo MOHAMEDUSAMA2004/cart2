@@ -1,0 +1,537 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: "Raleway", sans-serif;
+    text-transform: capitalize;
+}
+
+:root{
+    ---main-color : #EEBF00;
+    
+}
+
+
+/* ----------- start nav------------ */
+nav{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 5000;
+    background-color: #fff;
+    border: 2px solid #ccc;
+}
+nav .top_nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #232B38;
+    color: #fff;
+    padding: 10px 50px ;
+}
+nav .top_nav .icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+nav .top_nav .tools{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+nav .top_nav i {
+    cursor: pointer;
+}
+nav .top_nav .tools div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    position: relative;
+}
+nav .top_nav .tools div:not(:last-child)::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background-color: #fff;
+    right: -15px;
+    top: 0;
+}
+nav .top_nav .tools div p {
+    transition: 0.5s;
+    cursor: pointer;
+}
+nav .top_nav .tools div p:hover {
+    color: var(---main-color);
+}
+nav .top_nav .tools div .fa-cart-shopping{
+    cursor: pointer;
+    transition: 0.5s;
+}
+nav .top_nav .tools div .fa-cart-shopping:hover{
+    transform: rotate(360deg);
+}
+nav .top_nav .tools div span{
+    font-size: 17px;
+    color: red;
+    padding: 1px 5px ;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+
+.fa-bars{
+    display: none;
+    font-size: 20px;
+    transition: 0.5s;
+}
+.menu_toggler.open{
+    text-shadow: 1px 1px 1px var(---main-color);
+    transform: rotate(90deg);
+}
+
+nav .down_nav{
+    padding: 10px 50px 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 7px;
+}
+nav .down_nav .nav_title{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+nav .down_nav .nav_title .nav_details{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    gap: 10px;
+}
+nav .down_nav .list_links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 15px 0  2px;
+    transition: 0.5s;
+}
+
+
+
+nav .down_nav .list_links a{
+    text-decoration: none;
+    color: #000;
+    background-color:#fff;
+    padding: 15px 20px;
+    transition: 0.5s;
+    font-weight: bold;
+}
+nav .down_nav .list_links a:hover{
+    background-color: var(---main-color);
+    color: #fff;
+
+}
+nav .down_nav .list_links a.active{
+    background-color: var(---main-color);
+    color: #fff;
+}
+@media (max-width:850px) {
+    nav .down_nav{
+        padding: 10px 10px 2px;
+    }
+    nav .down_nav .nav_details:last-child{
+        display: none;
+    }
+    }
+    @media (max-width:750px){
+    nav .down_nav .list_links{
+      width: 100%;
+      flex-direction: column;
+      gap: 3px;
+      height: 0;
+      opacity: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    nav .down_nav .list_links.open{
+      height: auto;
+      padding: 15px 0  2px;
+      opacity: 1;
+      overflow: visible;
+
+    }
+    nav .down_nav .list_links a{
+        width: 80%;
+        text-align: center;
+    }
+    .menu_toggler{
+        display: block;
+    }
+
+
+
+}
+/* ----------- end nav------------ */
+
+
+
+
+
+
+/* ---------start header------------ */
+header{
+    padding: 50px 200px ;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-image: url('images//hero.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+header .header_title{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+header .header_title div{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+header .header_title h1{
+    font-size: 40px;
+}
+header .header_title h1 span{
+    color: var(---main-color);
+}
+header .header_title p{
+    opacity: 0.9;
+    font-weight: 500;
+    color: gray;
+    width: 500px;
+}
+header .header_title button{
+    padding: 10px 15px;
+    border: 1px solid var(---main-color);
+    outline: none;
+    background-color: var(---main-color);
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: 0.5s;
+}
+.btn{
+    padding: 10px 15px;
+    border: 1px solid var(---main-color);
+    outline: none;
+    background-color: var(---main-color);
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: 0.5s;
+}
+header .header_title button:last-child{
+    background-color: #232B38 ;
+    border: 1px solid #232B38;
+    color: #fff;
+}
+header .header_title button:hover{
+    color: var(---main-color);
+    background-color: #fff;
+}
+header .header_title button:last-child:hover{
+    color: #232B38;
+    background-color: #fff;
+}
+header .header_img img{
+    width: 300px;
+    animation: header_img 2s linear infinite alternate ;
+    cursor: pointer;
+}
+@keyframes header_img {
+    50%{
+        transform: translateY(-15px);
+    }
+}
+/* ---------end header------------ */
+
+
+
+/* --------- sticky_title---------- */
+section{
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 100px;
+}
+.sticky_title{
+    font-size: 38px;
+    text-align: center ;
+    color: #232B38;
+    font-style: italic;
+    position: relative;
+}
+.sticky_title::after{
+    content: "";
+    position: absolute;
+    background-image: url('icons/hr.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    bottom: -35px;;
+    left: 0;
+    width: 100%;
+    height: 30px;
+}
+/* --------- sticky_title---------- */
+
+
+
+
+/* -----------start top_products------------ */
+
+.top_products{
+    background-color: #F0F0F0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 70px;
+}
+.top_products .slider{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.slider_icons{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(---main-color);
+    cursor: pointer;
+    color: #fff;
+    border-radius: 5px;
+}
+.top_products  .fa-angle-left{
+    left: 100px;
+}
+
+.top_products  .fa-angle-right{
+    right: 100px;
+}
+.top_products .slider .container{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow-x: hidden;
+    padding: 5px;
+
+}
+.top_products .slider .container .card{
+    background-color: #fff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 0;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.top_products .slider .container .card:hover{
+    box-shadow: var(---main-color) 0px 1px 4px,
+                var(---main-color) 0px 1px 4px,
+                var(---main-color) 0px 1px 4px,
+                var(---main-color) 0px 1px 4px,
+                var(---main-color) 0px 1px 4px;
+    border-radius: 30px;
+    
+}
+.top_products .slider .container .card img{
+    width: 70%;
+    height: 200px;
+}
+.top_products .slider .container .card .card_details{
+    padding: 20px 0 ;
+    border-top: 0.5px solid #eee;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.top_products .slider .container .card .card_details b{
+    font-size: 22px;
+}
+.top_products .slider .container .card .card_details .stars i:not(:last-child){
+    color: var(---main-color);
+}
+.top_products .slider .container .card .card_details p{
+    font-weight: bold;
+    text-align: center;
+    color: green;
+}
+.top_products .slider .container .card .card_details p span{
+    color: red;
+    text-decoration: line-through;
+}
+.top_products .slider .container .card .card_details .add_to_cart{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border: 2px solid var(---main-color);
+    width: 60%;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+.top_products .slider .container .card .card_details .add_to_cart i {
+    background-color: var(---main-color);
+    color: #fff;
+    padding:5px;
+}
+.top_products .slider .container .card .card_details .add_to_cart p {
+    color: #232B38;
+    transition: 0.3s;
+}
+.top_products .slider .container .card .card_details .add_to_cart::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(---main-color);
+    z-index: -1;
+    transition: 0.5s;
+}
+.top_products .slider .container .card .card_details .add_to_cart:hover::after{
+    width: 100%;
+}
+.top_products .slider .container .card .card_details .add_to_cart:hover p{
+    color: #fff;
+}
+
+/* -----------end top_products------------ */
+
+
+
+
+
+.toTop{
+    position: fixed;
+    bottom: 50px;
+    left: 50px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(---main-color);
+    color: #FFf;
+    cursor: pointer;
+    border: 2px solid #171d27;
+    transition: 0.5s;
+    display: none;
+}
+.toTop:hover{
+    transform: translateY(-10px);
+}
+
+
+.cart{
+    position: fixed;
+    width: 340px;
+    height: 93vh;
+    background-color: #232B38;
+    color: #fff;
+    padding: 20px;
+    right: -340px;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 5001;
+    border-left: 2px solid var(---main-color);
+    border-top: 2px solid var(---main-color);
+    border-radius: 10px 0 0 0 ;
+    transition: 0.5s;
+}
+.cart.open{
+    right: 0;
+}
+.cart .fa-circle-xmark{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+.cart h3{
+    font-size: 25px;
+}
+.cart .container{
+
+}
+.cart .totall{
+    padding: 10px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+.cart .totall::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    background-color: #fff;
+    height: 2px;
+    left: 0;
+    top: 0;
+}
+.cart .product{
+    width: 100%;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between;
+}
+.cart .product img{
+    width: 50px;
+    height: 50px;
+}
+.blur{
+
+}
